@@ -205,6 +205,7 @@ class _FeatureImportanceAccessor(_BaseAccessor[EstimatorReport], DirNamesMixin):
         )
         try:
             intercept = np.atleast_2d(estimator.intercept_)
+
         except AttributeError:
             # SGDOneClassSVM does not expose `intercept_`
             intercept = None
